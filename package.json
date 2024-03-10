@@ -1,0 +1,35 @@
+{
+  "name": "todoapp",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Just another overcomplicated todo app",
+  "keywords": [
+    "monorepo",
+    "programming",
+    "todo-app"
+  ],
+  "license": "GPL-3.0",
+  "author": "Jaime Leonardo Suncin Cruz",
+  "scripts": {
+    "build": "turbo build",
+    "dev": "turbo dev",
+    "lint": "turbo lint",
+    "prepare": "husky",
+    "start": "turbo start",
+    "test": "turbo test"
+  },
+  "dependencies": {
+    "@commitlint/cli": "19.0.3",
+    "@commitlint/config-conventional": "19.0.3",
+    "eslint": "8.57.0",
+    "eslint-config-canonical": "42.8.1",
+    "husky": "9.0.11",
+    "lint-staged": "15.2.2",
+    "markdownlint-cli2": "0.12.1",
+    "prettier": "3.2.5",
+    "sort-package-json": "2.8.0",
+    "syncpack": "12.3.0",
+    "turbo": "1.12.5"
+  },
+  "packageManager": "pnpm@8.15.4"
+}
