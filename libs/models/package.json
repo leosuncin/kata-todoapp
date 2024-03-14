@@ -1,0 +1,21 @@
+{
+  "name": "@todoapp/models",
+  "version": "0.0.0",
+  "description": "Models for the todo app",
+  "keywords": [],
+  "license": "GPL-3.0",
+  "author": "Jaime Leonardo Suncin Cruz",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "prepare": "ts-patch install && typia patch"
+  },
+  "dependencies": {
+    "typia": "5.5.4"
+  },
+  "devDependencies": {
+    "ts-node": "10.9.2",
+    "ts-patch": "3.1.2",
+    "typescript": "5.3.2"
+  }
+}
