@@ -78,6 +78,9 @@ importers:
         specifier: 5.5.4
         version: 5.5.4(typescript@5.3.2)
     devDependencies:
+      borp:
+        specifier: 0.10.0
+        version: 0.10.0
       eslint:
         specifier: 8.57.0
         version: 8.57.0

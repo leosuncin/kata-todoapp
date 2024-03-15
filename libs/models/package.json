@@ -16,12 +16,14 @@
   "scripts": {
     "build": "tsc -p tsconfig.build.json",
     "lint": "eslint --cache --ext .ts .",
-    "prepare": "ts-patch install && typia patch"
+    "prepare": "ts-patch install && typia patch",
+    "test": "borp"
   },
   "dependencies": {
     "typia": "5.5.4"
   },
   "devDependencies": {
+    "borp": "0.10.0",
     "eslint": "8.57.0",
     "eslint-config-unjs": "0.2.1",
     "ts-node": "10.9.2",
