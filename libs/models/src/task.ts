@@ -7,7 +7,7 @@ import {
   type tags,
 } from 'typia';
 
-import type { User } from './user';
+import type { User } from './user.js';
 
 export interface Task {
   readonly id: string & tags.Pattern<'task_\\w+'>;
