@@ -72,6 +72,30 @@ importers:
         specifier: 3.4.7
         version: 3.4.7(typescript@5.4.2)
 
+  libs/validations:
+    devDependencies:
+      '@types/node':
+        specifier: 20.11.25
+        version: 20.11.25
+      borp:
+        specifier: 0.10.0
+        version: 0.10.0
+      eslint:
+        specifier: 8.57.0
+        version: 8.57.0
+      eslint-config-unjs:
+        specifier: 0.2.1
+        version: 0.2.1(eslint@8.57.0)(typescript@5.4.2)
+      ts-patch:
+        specifier: 3.1.2
+        version: 3.1.2
+      typescript:
+        specifier: 5.4.2
+        version: 5.4.2
+      typescript-transform-paths:
+        specifier: 3.4.7
+        version: 3.4.7(typescript@5.4.2)
+
 packages:
   /@aashutoshrathi/word-wrap@1.2.6:
     resolution:
@@ -1117,7 +1141,7 @@ packages:
         integrity: sha512-qwVpFEHNfhYJIzNRBvd2C1kyo6jz3ZSMPyyuR47OPdiKWlbYnZNyDWuyR175qDnAJLiCo5fBBqPb3RiXgWlkOQ==,
       }
     dependencies:
-      semver: 7.5.4
+      semver: 7.6.0
 
   /c8@9.1.0:
     resolution:
@@ -3825,7 +3849,7 @@ packages:
     dependencies:
       hosted-git-info: 7.0.1
       proc-log: 3.0.0
-      semver: 7.5.4
+      semver: 7.6.0
       validate-npm-package-name: 5.0.0
     dev: false
 
@@ -4523,6 +4547,7 @@ packages:
     hasBin: true
     dependencies:
       lru-cache: 6.0.0
+    dev: false
 
   /semver@7.6.0:
     resolution:
