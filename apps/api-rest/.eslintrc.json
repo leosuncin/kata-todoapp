@@ -1,0 +1,6 @@
+{
+  "extends": "canonical/auto",
+  "rules": {
+    "func-style": ["error", "declaration"]
+  }
+}
