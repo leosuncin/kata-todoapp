@@ -1,5 +1,9 @@
 import { initContract } from '@ts-rest/core';
 
-const c = initContract();
+import { authRoutes } from '@contract/auth.js';
 
-export const contract = c.router({});
+const { router } = initContract();
+
+export const contract = router({
+  auth: authRoutes,
+});

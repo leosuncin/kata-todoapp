@@ -36,6 +36,10 @@ importers:
         version: 1.12.5
 
   libs/contract:
+    dependencies:
+      '@todoapp/schemas':
+        specifier: workspace:*
+        version: link:../schemas
     devDependencies:
       '@ts-rest/core':
         specifier: 3.35.0
