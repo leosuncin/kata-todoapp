@@ -43,6 +43,9 @@ importers:
       '@ts-rest/express':
         specifier: 3.35.1
         version: 3.35.1(express@4.18.3)(zod@3.22.4)
+      convict:
+        specifier: 6.2.4
+        version: 6.2.4
       express:
         specifier: 4.18.3
         version: 4.18.3
@@ -50,6 +53,9 @@ importers:
         specifier: 3.22.4
         version: 3.22.4
     devDependencies:
+      '@types/convict':
+        specifier: 6.1.6
+        version: 6.1.6
       '@types/express':
         specifier: 4.17.21
         version: 4.17.21
@@ -1839,6 +1845,15 @@ packages:
       '@types/node': 20.11.25
     dev: false
 
+  /@types/convict@6.1.6:
+    resolution:
+      {
+        integrity: sha512-1B6jqWHWQud+7yyWAqbxnPmzlHrrOtJzZr1DhhYJ/NbpS4irfZSnq+N5Fm76J9LNRlUZvCmYxTVhhohWRvtqHw==,
+      }
+    dependencies:
+      '@types/node': 20.11.25
+    dev: true
+
   /@types/express-serve-static-core@4.17.43:
     resolution:
       {
@@ -3245,6 +3260,17 @@ packages:
         integrity: sha512-Kvp459HrV2FEJ1CAsi1Ku+MY3kasH19TFykTz2xWmMeq6bk2NU3XXvfJ+Q61m0xktWwt+1HSYf3JZsTms3aRJg==,
       }
     dev: true
+
+  /convict@6.2.4:
+    resolution:
+      {
+        integrity: sha512-qN60BAwdMVdofckX7AlohVJ2x9UvjTNoKVXCL2LxFk1l7757EJqf1nySdMkPQer0bt8kQ5lQiyZ9/2NvrFBuwQ==,
+      }
+    engines: { node: '>=6' }
+    dependencies:
+      lodash.clonedeep: 4.5.0
+      yargs-parser: 20.2.9
+    dev: false
 
   /cookie-signature@1.0.6:
     resolution:
@@ -6900,6 +6926,13 @@ packages:
       }
     dev: false
 
+  /lodash.clonedeep@4.5.0:
+    resolution:
+      {
+        integrity: sha512-H5ZhCF25riFd9uB5UCkVKo61m3S/xZk1x4wA6yp/L3RFP6Z/eHH1ymQcGLo7J3GMPfm0V/7m1tryHuGVxpqEBQ==,
+      }
+    dev: false
+
   /lodash.get@4.4.2:
     resolution:
       {
@@ -9904,6 +9937,14 @@ packages:
         integrity: sha512-8aAvwVUSHpfEqTQ4w/KMlf3HcRdt50E5ODIQJBw1fQ5RL34xabzxtUlzTXVqc4rkZsPbvrXKWnABCD7kWSmocA==,
       }
     engines: { node: '>= 14' }
+
+  /yargs-parser@20.2.9:
+    resolution:
+      {
+        integrity: sha512-y11nGElTIV+CT3Zv9t7VKl+Q3hTQoT9a1Qzezhhl6Rp21gJ/IVTW7Z3y9EWXhuUBC2Shnf+DX0antecpAwSP8w==,
+      }
+    engines: { node: '>=10' }
+    dev: false
 
   /yargs-parser@21.1.1:
     resolution:
