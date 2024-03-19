@@ -1,0 +1,25 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+    types: [opened, synchronize]
+
+jobs:
+  unit-test:
+    name: Unit test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+      - name: Setup PNPM
+        uses: wyvox/action-setup-pnpm@v3
+        with:
+          node-version: 'lts/*'
+          args: --frozen-lockfile
+      - name: Lint files
+        run: pnpm lint
+      - name: Run tests
+        run: pnpm test
