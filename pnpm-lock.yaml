@@ -77,6 +77,9 @@ importers:
       '@types/node':
         specifier: 20.11.25
         version: 20.11.25
+      '@vinejs/vine':
+        specifier: 1.8.0
+        version: 1.8.0
       borp:
         specifier: 0.10.0
         version: 0.10.0
@@ -557,6 +560,14 @@ packages:
     dev: true
     optional: true
 
+  /@poppinss/macroable@1.0.1:
+    resolution:
+      {
+        integrity: sha512-bO3+rnqGhE+gdx4DOyYjY9jCm2+c5Ncyl2Gmst0w271rIFnsB00btonpdmAqvFNzS8rcas+APGm+47fYMmkpQA==,
+      }
+    engines: { node: '>=18.16.0' }
+    dev: true
+
   /@reporters/github@1.6.0:
     resolution:
       {
@@ -633,6 +644,13 @@ packages:
     resolution:
       {
         integrity: sha512-I8EUhyrgfLrcTkzV3TSsGyl1tSuPrEDzr0yd5m90UgNxQkyDXULk3b6MlQqTCpZpNtWe1K0hzclnZkTcLBe2UQ==,
+      }
+    dev: true
+
+  /@types/validator@13.11.9:
+    resolution:
+      {
+        integrity: sha512-FCTsikRozryfayPuiI46QzH3fnrOoctTjvOYZkho9BTFLCOZ2rgZJHMOVgCOfttjPJcgOx52EpkY0CMfy87MIw==,
       }
     dev: true
 
@@ -795,6 +813,31 @@ packages:
       {
         integrity: sha512-zuVdFrMJiuCDQUMCzQaD6KL28MjnqqN8XnAqiEq9PNm/hCPTSGfrXCOfwj1ow4LFb/tNymJPwsNbVePc1xFqrQ==,
       }
+    dev: true
+
+  /@vinejs/compiler@2.4.1:
+    resolution:
+      {
+        integrity: sha512-WZqCZEQBvuPEghAxnpvNLclyyfqkmU+2V2K4zoZhOUJRD9KRJ+hCNQQ6LSzt7ZwSh+wwxq0r9FpAfeC3tswB8Q==,
+      }
+    engines: { node: '>=18.0.0' }
+    dev: true
+
+  /@vinejs/vine@1.8.0:
+    resolution:
+      {
+        integrity: sha512-Qq3XxbA26jzqS9ICifkqzT399lMQZ2fWtqeV3luI2as+UIK7qDifJFU2Q4W3q3IB5VXoWxgwAZSZEO0em9I/qQ==,
+      }
+    engines: { node: '>=18.16.0' }
+    dependencies:
+      '@poppinss/macroable': 1.0.1
+      '@types/validator': 13.11.9
+      '@vinejs/compiler': 2.4.1
+      camelcase: 8.0.0
+      dayjs: 1.11.10
+      dlv: 1.1.3
+      normalize-url: 8.0.1
+      validator: 13.11.0
     dev: true
 
   /JSONStream@1.3.5:
@@ -1185,6 +1228,14 @@ packages:
       }
     engines: { node: '>=6' }
 
+  /camelcase@8.0.0:
+    resolution:
+      {
+        integrity: sha512-8WB3Jcas3swSvjIeA2yvCJ+Miyz5l1ZmB6HFb9R1317dt9LCQoswg/BGrmAmkWVEszSrrg4RwmO46qIm2OEnSA==,
+      }
+    engines: { node: '>=16' }
+    dev: true
+
   /chalk@2.4.2:
     resolution:
       {
@@ -1473,6 +1524,13 @@ packages:
     engines: { node: '>=12' }
     dev: false
 
+  /dayjs@1.11.10:
+    resolution:
+      {
+        integrity: sha512-vjAczensTgRcqDERK0SR2XMwsF/tSvnvlv6VcF2GIhg6Sx4yOIt/irsr1RDJsKiIyBzJDpCoXiWWq28MqH2cnQ==,
+      }
+    dev: true
+
   /debug@3.2.7:
     resolution:
       {
@@ -1591,6 +1649,13 @@ packages:
     engines: { node: '>=8' }
     dependencies:
       path-type: 4.0.0
+
+  /dlv@1.1.3:
+    resolution:
+      {
+        integrity: sha512-+HlytyjlPKnIG8XuRG8WvmBP8xs8P71y+SKKS6ZXWoEgLuePxtDoUEiH7WkdePWrQ5JBpE6aoVqfZfJUQkjXwA==,
+      }
+    dev: true
 
   /doctrine@2.1.0:
     resolution:
@@ -3840,6 +3905,14 @@ packages:
       validate-npm-package-license: 3.0.4
     dev: true
 
+  /normalize-url@8.0.1:
+    resolution:
+      {
+        integrity: sha512-IO9QvjUMWxPQQhs60oOu10CRkWCiZzSUkzbXGGV9pviYl1fXYcvkzQ5jV9z8Y6un8ARoVRl4EtC6v6jNqbaJ/w==,
+      }
+    engines: { node: '>=14.16' }
+    dev: true
+
   /npm-package-arg@11.0.1:
     resolution:
       {
@@ -5431,6 +5504,14 @@ packages:
     dependencies:
       builtins: 5.0.1
     dev: false
+
+  /validator@13.11.0:
+    resolution:
+      {
+        integrity: sha512-Ii+sehpSfZy+At5nPdnyMhx78fEoPDkR2XW/zimHEL3MyGJQOCQ7WeP20jPYRz7ZCpcKLB21NxuXHF3bxjStBQ==,
+      }
+    engines: { node: '>= 0.10' }
+    dev: true
 
   /wcwidth@1.0.1:
     resolution:

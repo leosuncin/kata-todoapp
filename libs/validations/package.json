@@ -21,11 +21,15 @@
   },
   "devDependencies": {
     "@types/node": "20.11.25",
+    "@vinejs/vine": "1.8.0",
     "borp": "0.10.0",
     "eslint": "8.57.0",
     "eslint-config-unjs": "0.2.1",
     "ts-patch": "3.1.2",
     "typescript": "5.4.2",
     "typescript-transform-paths": "3.4.7"
+  },
+  "peerDependencies": {
+    "@vinejs/vine": "1.8.0"
   }
 }
