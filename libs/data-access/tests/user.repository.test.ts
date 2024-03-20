@@ -3,8 +3,7 @@ import { afterEach, beforeEach, describe, it } from 'node:test';
 
 import { createDatabase, type Connection } from '@data-access/database.js';
 import { UserRepository } from '@data-access/user.repository.js';
-import * as createUsersTableMigration from '@migrations/0001-create-users-table.js';
-import * as createTasksTableMigration from '@migrations/0002-create-tasks-table.js';
+import { createMigrator } from '@migrations/index.js';
 
 describe('UserRepository', () => {
   let userRepository: UserRepository;
@@ -12,16 +11,13 @@ describe('UserRepository', () => {
 
   beforeEach(async () => {
     connection = createDatabase(':memory:');
-
-    await createUsersTableMigration.up(connection);
-    await createTasksTableMigration.up(connection);
-
     userRepository = new UserRepository(connection);
+    const migrator = createMigrator(connection);
+
+    await migrator.migrateToLatest();
   });
 
   afterEach(async () => {
-    await createTasksTableMigration.down(connection);
-    await createUsersTableMigration.down(connection);
     await connection.destroy();
   });
 

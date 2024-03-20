@@ -3,8 +3,7 @@ import { afterEach, beforeEach, describe, it } from 'node:test';
 
 import { createDatabase, type Connection } from '@data-access/database.js';
 import { TaskRepository } from '@data-access/task.repository.js';
-import * as createUsersTableMigration from '@migrations/0001-create-users-table.js';
-import * as createTasksTableMigration from '@migrations/0002-create-tasks-table.js';
+import { createMigrator } from '@migrations/index.js';
 
 describe('TaskRepository', () => {
   let taskRepository: TaskRepository;
@@ -12,9 +11,10 @@ describe('TaskRepository', () => {
 
   beforeEach(async () => {
     connection = createDatabase(':memory:');
+    taskRepository = new TaskRepository(connection);
+    const migrator = createMigrator(connection);
 
-    await createUsersTableMigration.up(connection);
-    await createTasksTableMigration.up(connection);
+    await migrator.migrateToLatest();
     await connection
       .insertInto('users')
       .values({
@@ -24,13 +24,9 @@ describe('TaskRepository', () => {
       })
       .onConflict((qb) => qb.doNothing())
       .execute();
-
-    taskRepository = new TaskRepository(connection);
   });
 
   afterEach(async () => {
-    await createTasksTableMigration.down(connection);
-    await createUsersTableMigration.down(connection);
     await connection.destroy();
   });
 
