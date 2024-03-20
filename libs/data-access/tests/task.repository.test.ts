@@ -1,24 +1,17 @@
 import * as assert from 'node:assert/strict';
 import { afterEach, beforeEach, describe, it } from 'node:test';
 
-import SQLite from 'better-sqlite3';
-import { Kysely, SqliteDialect } from 'kysely';
-
-import { Database } from '@data-access/database.js';
+import { createDatabase, type Connection } from '@data-access/database.js';
 import { TaskRepository } from '@data-access/task.repository.js';
 import * as createUsersTableMigration from '@migrations/0001-create-users-table.js';
 import * as createTasksTableMigration from '@migrations/0002-create-tasks-table.js';
 
 describe('TaskRepository', () => {
   let taskRepository: TaskRepository;
-  let connection: Kysely<Database>;
+  let connection: Connection;
 
   beforeEach(async () => {
-    connection = new Kysely<Database>({
-      dialect: new SqliteDialect({
-        database: new SQLite(':memory:'),
-      }),
-    });
+    connection = createDatabase(':memory:');
 
     await createUsersTableMigration.up(connection);
     await createTasksTableMigration.up(connection);
@@ -50,7 +43,7 @@ describe('TaskRepository', () => {
     assert.ok(task);
     assert.equal(task.title, 'test task');
     assert.match(task.id, /task_\w+/);
-    assert.equal(task.completed, 0);
+    assert.equal(task.completed, false);
   });
 
   it('get tasks', async () => {
@@ -92,12 +85,12 @@ describe('TaskRepository', () => {
 
     const updatedTask = await taskRepository.updateTaskById(task.id, {
       title: 'updated task',
-      completed: 1,
+      completed: true,
     });
 
     assert.ok(updatedTask);
     assert.equal(updatedTask.title, 'updated task');
-    assert.equal(updatedTask.completed, 1);
+    assert.equal(updatedTask.completed, true);
   });
 
   it('update tasks by author id', async () => {
@@ -109,13 +102,13 @@ describe('TaskRepository', () => {
     const updatedTasks = await taskRepository.updateTasksByAuthorId(
       'user_test',
       {
-        completed: 1,
+        completed: true,
       },
     );
 
     assert.ok(Array.isArray(updatedTasks));
     assert.equal(updatedTasks.length, 1);
-    assert.ok(updatedTasks.every((task) => task.completed === 1));
+    assert.ok(updatedTasks.every((task) => task.completed));
   });
 
   it('delete a task by id', async () => {

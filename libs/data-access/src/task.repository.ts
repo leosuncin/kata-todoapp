@@ -44,7 +44,7 @@ export class TaskRepository {
     const query = this.connection.selectFrom('tasks').select(aliases);
 
     if (typeof filter.completed === 'boolean') {
-      query.where('task_completed', '=', filter.completed ? 1 : 0);
+      query.where('task_completed', '=', filter.completed);
     }
 
     if (filter.authorId) {

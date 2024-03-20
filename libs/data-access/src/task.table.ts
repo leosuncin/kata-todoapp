@@ -6,7 +6,7 @@ import { TransformObjectPropertiesRemovePrefixAndCamelizeThem } from '@data-acce
 export interface TaskTable {
   task_id: `task_${string}`;
   task_title: string;
-  task_completed: ColumnType<0 | 1, 0 | undefined, 0 | 1 | undefined>;
+  task_completed: ColumnType<boolean, false | undefined, boolean | undefined>;
   task_author_id: UserTable['user_id'];
   task_created_at: ColumnType<Date, never, never>;
   task_updated_at: ColumnType<Date, never, string | undefined>;

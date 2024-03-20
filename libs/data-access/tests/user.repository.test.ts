@@ -1,24 +1,17 @@
 import * as assert from 'node:assert/strict';
 import { afterEach, beforeEach, describe, it } from 'node:test';
 
-import SQLite from 'better-sqlite3';
-import { Kysely, SqliteDialect } from 'kysely';
-
-import { Database } from '@data-access/database.js';
+import { createDatabase, type Connection } from '@data-access/database.js';
 import { UserRepository } from '@data-access/user.repository.js';
 import * as createUsersTableMigration from '@migrations/0001-create-users-table.js';
 import * as createTasksTableMigration from '@migrations/0002-create-tasks-table.js';
 
 describe('UserRepository', () => {
   let userRepository: UserRepository;
-  let connection: Kysely<Database>;
+  let connection: Connection;
 
   beforeEach(async () => {
-    connection = new Kysely<Database>({
-      dialect: new SqliteDialect({
-        database: new SQLite(':memory:'),
-      }),
-    });
+    connection = createDatabase(':memory:');
 
     await createUsersTableMigration.up(connection);
     await createTasksTableMigration.up(connection);
