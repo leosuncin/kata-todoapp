@@ -1,0 +1,41 @@
+{
+  "name": "@todoapp/lucia-adapter",
+  "version": "0.0.0",
+  "description": "Database adapter for Lucia",
+  "keywords": [],
+  "license": "GPL-3.0",
+  "author": "Jaime Leonardo Suncin Cruz",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/src/index.d.ts",
+      "import": "./dist/src/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "lint": "eslint --cache --ext .ts .",
+    "prepare": "ts-patch install -s",
+    "test": "borp"
+  },
+  "dependencies": {
+    "@todoapp/data-access": "workspace:*"
+  },
+  "devDependencies": {
+    "borp": "0.10.0",
+    "eslint": "8.57.0",
+    "eslint-config-unjs": "0.2.1",
+    "kysely": "0.27.3",
+    "lucia": "3.1.1",
+    "ts-patch": "3.1.2",
+    "typescript": "5.4.2",
+    "typescript-transform-paths": "3.4.7"
+  },
+  "peerDependencies": {
+    "kysely": "0.27.3",
+    "lucia": "3.1.1"
+  }
+}

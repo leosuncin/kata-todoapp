@@ -1,0 +1,14 @@
+{
+  "extends": ["eslint-config-unjs"],
+  "settings": {
+    "import/resolver": {
+      "typescript": true,
+      "node": true
+    }
+  },
+  "rules": {
+    "unicorn/expiring-todo-comments": "off",
+    "no-useless-constructor": "off",
+    "camelcase": "off"
+  }
+}
